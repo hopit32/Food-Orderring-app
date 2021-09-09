@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+    <ImageView
+        android:id="@+id/checked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/checked_icon"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delivered"
+        android:textColor="@color/orange"
+        android:layout_alignBottom="@id/checked"
+        android:layout_marginLeft="40dp"/>
+
+    <TextView
+        android:id="@+id/itembill_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/checked"
+        android:layout_marginLeft="115dp"
+        android:text="13,Sep"
+        android:textColor="#616161" />
+
+    <TextView
+        android:id="@+id/itembill_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="40dp"
+        android:text="Beff Noodles Pagaski..."
+        android:textColor="#111"
+        android:textSize="17dp" />
+
+    <TextView
+        android:id="@+id/itembill_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="80dp"
+        android:text="$78"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/itembill_paymentmethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/itembill_total"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/itembill_total"
+        android:text="(Banking)" />
+
+    <ImageView
+        android:id="@+id/itembill_showdetail"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@id/itembill_name"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/foward" />
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E3E3E3"
+        android:layout_below="@id/itembill_total"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        />
+    <TextView
+        android:id="@+id/pre_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pre Order"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/view1"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:textColor="@color/orange"
+        android:fontFamily="@font/font3"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/main_background"
+        android:layout_below="@id/pre_order"
+        android:layout_marginTop="15dp"
+        />
+
+
+
+</RelativeLayout>

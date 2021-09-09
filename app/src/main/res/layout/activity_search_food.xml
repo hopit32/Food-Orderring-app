@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ACTIVITY.SearchFoodActivity"
+    android:background="@color/main_background">
+
+    <EditText
+        android:id="@+id/searchview_edtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#D6D6D6"
+        android:drawableLeft="@drawable/left"
+        android:hint="  Search Food, Restaurant"
+        android:paddingLeft="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchview_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchview_countfood"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/searchview_countfood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="130dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp">
+    <TextView
+        android:id="@+id/itemfood_orderdetail_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3 x"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="16dp"
+        />
+
+    <TextView
+        android:id="@+id/itemfood_orderdetail_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/itemfood_orderdetail_count"
+        android:layout_marginLeft="100dp"
+        android:text="Hambuger"
+        android:textColor="#111"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/itemfood_orderdetail_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/itemfood_orderdetail_name"
+        android:layout_marginRight="10dp"
+        android:text="$5"
+        android:textColor="#111" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_below="@id/itemfood_orderdetail_name"
+        android:background="#E3E3E3"
+        android:layout_marginTop="10dp"/>
+
+
+
+
+</RelativeLayout>

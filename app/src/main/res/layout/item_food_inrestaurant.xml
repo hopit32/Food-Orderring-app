@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@color/main_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/background_itemrestaurant"
+        >
+
+        <ImageView
+            android:id="@+id/itemFoodinREs_image"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/itemFoodinREs_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="10dp"
+            android:text="Sea Noodles"
+            android:textColor="#111"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemFoodinREs_description"
+            android:layout_width="180dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="120dp"
+            android:textSize="13dp"
+            android:layout_marginTop="34dp"
+            android:text="Fresh food with wonderfull..." />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/fire" />
+
+        <TextView
+            android:id="@+id/itemFoodinREs_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="144dp"
+            android:layout_marginTop="60dp"
+            android:text="78 Calories"
+            android:textColor="@color/orange" />
+
+        <TextView
+            android:id="@+id/itemFoodinREs_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="80dp"
+            android:text="$ 7.8"
+            android:textColor="#111"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemFoodinREs_showdetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="90dp"
+            android:layout_marginRight="25dp"
+            android:text="Show detail >"
+            android:textColor="#B8B8B8" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

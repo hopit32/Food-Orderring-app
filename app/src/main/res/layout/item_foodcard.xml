@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.chauthai.swipereveallayout.SwipeRevealLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:dragEdge="right"
+    android:background="@color/main_background"
+    app:mode="same_level"
+    android:id="@+id/swipe_layout" android:layout_height="wrap_content" android:layout_width="match_parent">
+<RelativeLayout
+    android:layout_width="60dp"
+    android:layout_height="125dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="115dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/swipe">
+
+        <ImageView
+            android:id="@+id/img_delete_item"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/delete" />
+    </RelativeLayout>
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="125dp">
+
+
+
+<androidx.cardview.widget.CardView
+    android:layout_width="380dp"
+     android:layout_marginVertical="5dp"
+    android:layout_centerHorizontal="true"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="10dp">
+
+        <ImageView
+            android:id="@+id/item_foodcard_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/item_foodcard_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="120dp"
+            android:fontFamily="@font/font2"
+            android:text="Noodles"
+            android:textColor="#111"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_foodcard_description"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/font2"
+            android:text="with many thing of fress"
+            android:textSize="15dp" />
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@id/item_foodcard_description"
+            android:layout_alignBottom="@id/item_foodcard_image"
+            android:background="@drawable/border_menu_change"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/item_foodcard_reduce"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/minus_item" />
+
+            <TextView
+                android:id="@+id/item_foodcard_numberfoodinCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="1"
+                android:textColor="#111"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/item_foodcard_add"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/plus_black" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dp"
+            android:text="$"
+            android:textColor="#111"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/item_foodcard_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"
+            android:text="7.5"
+            android:textColor="#111"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/item_foodcard_image"
+            android:layout_toLeftOf="@id/item_foodcard_priceItem"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/font2"
+            android:text="$"
+            android:textColor="@color/orange"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_foodcard_priceItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/item_foodcard_image"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="0dp"
+            android:fontFamily="@font/font2"
+            android:text="7.75"
+            android:textColor="@color/orange"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</com.chauthai.swipereveallayout.SwipeRevealLayout>

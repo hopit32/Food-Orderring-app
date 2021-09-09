@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/iconback_black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order confirmation"
+                android:textSize="23dp"
+                android:textColor="#111"
+                android:layout_marginLeft="80dp"/>
+        </Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="575dp"
+        android:layout_above="@id/card"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_baseline_location_on_24" />
+
+            <ImageView
+
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/view3"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_access_time_24" />
+
+            <TextView
+                android:id="@+id/h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="20dp"
+                android:text="Address Shipping"
+                android:textColor="#111" />
+
+            <TextView
+                android:id="@+id/stepone_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/h"
+                android:layout_alignLeft="@id/h"
+                android:layout_marginTop="10dp"
+                android:text="Duy Hop "
+                android:textColor="#111"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/stepone_phonenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/h"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/stepone_username"
+                android:text="0961189032"
+                android:textColor="#111"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/stepone_addressshipping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/stepone_username"
+                android:layout_alignLeft="@id/stepone_username"
+                android:layout_marginTop="10dp"
+                android:text="16 Hang Khay, Hoan Kiem, Ha Noi"
+                android:textColor="#111"
+                android:textSize="16dp" />
+
+            <View
+                android:id="@+id/view3"
+            android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="130dp"
+                android:background="#E3E3E3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view3"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="10dp"
+                android:text="Deliver now -"
+                android:textColor="#111"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/stepone_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view3"
+                android:layout_marginLeft="155dp"
+                android:layout_marginTop="10dp"
+
+                android:textColor="#111"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/stepone_recyclerViewFood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/stepone_date"
+                android:layout_marginTop="15dp" />
+
+            <TextView
+                android:id="@+id/r"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/stepone_recyclerViewFood"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="TotalItem"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/stepone_totalItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/r"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="$90"
+                android:textSize="15dp" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/r"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:background="#E3E3E3" />
+
+            <TextView
+                android:id="@+id/k"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view4"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Deliver"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/stepone_priceDeliver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/k"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="$3"
+                android:textSize="15dp" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/k"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#E3E3E3" />
+
+            <TextView
+                android:id="@+id/m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view5"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Total"
+                android:textColor="#111"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/stepone_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/m"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="$93"
+                android:textColor="@color/orange"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/stepone_total"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:text="Tax Included"
+                android:textSize="12dp" />
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:layout_below="@id/tax"
+                android:layout_marginTop="20dp"
+                android:background="#E3E3E3" />
+
+            <ImageView
+                android:id="@+id/img_i"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_below="@id/view7"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/voucher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view7"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/img_i"
+                android:text="Promotion"
+                android:textColor="#111" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view7"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="10dp"
+                android:text="Select Voucher >" />
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/img_i"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#E3E3E3" />
+
+            <ImageView
+                android:id="@+id/img_c"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/view8"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/dollar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view8"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/img_c"
+                android:text="Recieve coins"
+                android:textColor="#111" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view8"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="10dp"
+                android:text="Link now >" />
+
+            <View
+                android:id="@+id/view9"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/img_c"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="#E3E3E3" />
+
+            <ImageView
+                android:id="@+id/img_n"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/view9"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/note" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view9"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/img_c"
+                android:text="Note"
+                android:textColor="#111" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view9"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="10dp"
+                android:text="Note >" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:elevation="10dp">
+        <RelativeLayout
+            android:id="@+id/bottom_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:background="#ffffff">
+
+            <TextView
+                android:id="@+id/stepone_HomeMothod"
+                android:layout_width="190dp"
+                android:layout_height="54dp"
+                android:layout_above="@id/aa"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/boder_cluster_checkbox"
+                android:gravity="center"
+                android:text="Payment on delivery"
+                android:textColor="@color/orange" />
+
+            <TextView
+                android:id="@+id/stepone_BankingMethod"
+                android:layout_width="190dp"
+                android:layout_height="54dp"
+                android:layout_above="@id/aa"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/boder_payment_method"
+                android:gravity="center"
+                android:text="Banking" />
+
+
+            <TextView
+                android:id="@+id/aa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/stepone_checkout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:text="Payment method others"
+                android:textColor="#0675D6"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/stepone_checkout"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_above="@+id/view6"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_checkout"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="160dp"
+                android:layout_height="4dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="16dp"
+                android:background="#DCDCDC" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</RelativeLayout>

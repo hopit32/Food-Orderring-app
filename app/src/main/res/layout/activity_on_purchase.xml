@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ACTIVITY.OnPurchase"
+    android:background="@color/main_background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/purchase_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_background">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/iconback_black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="On Purchase"
+                android:textSize="23dp"
+                android:textColor="#111"
+                android:layout_marginLeft="110dp"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.998">
+
+        <TextView
+            android:id="@+id/purchase_continueShopping"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/btn_checkout"
+            android:gravity="center"
+            android:text="Continue Shopping"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <View
+            android:id="@+id/view6"
+            android:layout_width="160dp"
+            android:layout_height="4dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:background="#DCDCDC" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.81"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/onpurchase" />
+
+        <TextView
+            android:id="@+id/purchase_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"
+            android:text="Hey  DuyHop"
+            android:textColor="#111"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/thanks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="235dp"
+            android:text="Thanks for your purchase"
+            android:textColor="#111"
+            android:textSize="20dp" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/thanks"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#E3E3E3" />
+
+        <TextView
+            android:id="@+id/subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Subtotal"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:id="@+id/deliver"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtotal"
+            android:layout_alignLeft="@id/subtotal"
+            android:layout_marginTop="10dp"
+            android:text="Deliver"
+            android:textSize="17dp" />
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/deliver"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#E3E3E3" />
+
+        <TextView
+            android:id="@+id/total"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view2"
+            android:layout_alignLeft="@id/subtotal"
+            android:layout_marginTop="10dp"
+            android:text="Total"
+            android:textColor="#111"
+            android:textSize="17dp"
+            android:fontFamily="@font/font1"/>
+
+        <TextView
+            android:id="@+id/purchase_subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/subtotal"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:text="$70"
+            android:textColor="#111"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/purchase_deliver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/deliver"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:text="$3"
+            android:textColor="#111"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/purchase_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/total"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:text="$70"
+            android:textColor="@color/orange"
+            android:textSize="18dp"
+            android:fontFamily="@font/font1"/>
+
+        <TextView
+            android:id="@+id/purchase_order_detail"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/btn_order_detail"
+            android:gravity="center"
+            android:text="Order Detail"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_below="@id/purchase_total"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order #GDFTER"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/purchase_order_detail"
+            android:layout_marginTop="10dp"/>
+
+
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
