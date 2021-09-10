@@ -1,7 +1,5 @@
 package com.example.project_oderapp.ADAPTER;
 
-import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 
@@ -13,20 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.project_oderapp.ACTIVITY.DetailProduct;
 import com.example.project_oderapp.MODEL.Product;
-import com.example.project_oderapp.MainActivity;
 import com.example.project_oderapp.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 
 public class HomeProduct_Adapter extends RecyclerView.Adapter<HomeProduct_Adapter.ProductItemViewHolder> {
     List <Product> productList = new ArrayList<>();
@@ -81,10 +74,10 @@ public class HomeProduct_Adapter extends RecyclerView.Adapter<HomeProduct_Adapte
         public ProductItemViewHolder(@NonNull View itemView) {
 
             super(itemView);
-            imagefood = itemView.findViewById(R.id.itemFroduct_image);
-            namefood = itemView.findViewById(R.id.itemFroduct_name);
-            price = itemView.findViewById(R.id.itemFroduct_price);
-            desciption = itemView.findViewById(R.id.itemFroduct_description);
+            imagefood = itemView.findViewById(R.id.itemProduct_image);
+            namefood = itemView.findViewById(R.id.itemProduct_name);
+            price = itemView.findViewById(R.id.itemProduct_price);
+            desciption = itemView.findViewById(R.id.itemProduct_description);
             showdetail = itemView.findViewById(R.id.itemProduct_showdetail);
 
         }

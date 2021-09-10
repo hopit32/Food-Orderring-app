@@ -1,6 +1,8 @@
 package com.example.project_oderapp.FRAGMENT;
 
+import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.PointerIcon;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -28,23 +31,24 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.project_oderapp.ACTIVITY.DetailProduct;
 import com.example.project_oderapp.ACTIVITY.SearchFoodActivity;
 import com.example.project_oderapp.ACTIVITY.StartActivity;
 import com.example.project_oderapp.ADAPTER.HomeCategory_Adapter;
 import com.example.project_oderapp.ADAPTER.HomeProduct_Adapter;
 import com.example.project_oderapp.ADAPTER.Restaurant_Adapter;
+import com.example.project_oderapp.INTERFACE.ChangeBoderItemCategory;
 import com.example.project_oderapp.MANAGE.ManageCard;
 import com.example.project_oderapp.MODEL.Category;
 import com.example.project_oderapp.MODEL.Linkbanner;
 import com.example.project_oderapp.MODEL.Product;
 import com.example.project_oderapp.MODEL.Restaurant;
 import com.example.project_oderapp.MODEL.User;
-import com.example.project_oderapp.MainActivity;
 import com.example.project_oderapp.R;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -52,9 +56,10 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
-
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,10 +78,12 @@ public class Home_Fragment extends Fragment {
     List<Restaurant>restaurantList = new ArrayList<>();
     ManageCard manageCard;
     RecyclerView recyclerView_Category, recyclerView_Product, recyclerView_Restaurant;
-    Thread thread, thread2,thread_getInfo;
+    Thread threadCategory, threadrestaurant,thread_getInfo;
     private  static DatabaseReference databaseReference;
     private static List<Linkbanner> linkbannerList = new ArrayList<>();
     String IDUSER;
+    FirebaseRecyclerAdapter adapter;
+    int selected_postition =-2;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
@@ -116,7 +123,7 @@ public class Home_Fragment extends Fragment {
          GetInfoUser();
          setup_Banner();
          setCategory();
-         setProduct();
+        FilterProduct("");
          GetCart();
          setRestaurant();
 
@@ -147,6 +154,71 @@ public class Home_Fragment extends Fragment {
             }
         });
     }
+    public void FilterProduct(String idcategory)
+    {
+        Query query = FirebaseDatabase.getInstance().getReference("Product").orderByChild("idcategory").startAt(idcategory).endAt(idcategory + "\uf8ff");
+        FirebaseRecyclerOptions<Product> options
+                = new FirebaseRecyclerOptions.Builder<Product>()
+                .setQuery(query, Product.class)
+                .build();
+        adapter = new FirebaseRecyclerAdapter<Product,ProductViewHolder>(options) {
+            @NonNull
+            @Override
+            public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+               View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_main_food, parent,false);
+               return new ProductViewHolder(view);
+            }
+
+            @Override
+            protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull Product model) {
+                holder.SetDetail(getActivity().getApplicationContext(),model.getImage(),model.getName(), model.getDescription(), model.getPrice(), model.getCalories());
+                holder.show_detail.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getActivity().getApplicationContext(), DetailProduct.class);
+                        intent.putExtra("product", model);
+                        startActivity(intent);
+                    }
+                });
+            }
+
+
+
+
+    };
+        adapter.startListening();
+        recyclerView_Product.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL,false));
+        recyclerView_Product.setAdapter(adapter);
+
+
+
+    }
+    public class ProductViewHolder extends RecyclerView.ViewHolder
+    {
+        ImageView image_pr,show_detail;
+        TextView name_pr, calories_pr, price_pr,description_pr;
+        View mView;
+
+        public ProductViewHolder(@NonNull View itemView) {
+            super(itemView);
+            mView = itemView;
+        }
+        public void SetDetail(Context context,String image, String name, String description, String price, String calories)
+        {
+            image_pr = mView.findViewById(R.id.itemProduct_image);
+            show_detail = mView.findViewById(R.id.itemProduct_showdetail);
+            name_pr = mView.findViewById(R.id.itemProduct_name);
+            calories_pr = mView.findViewById(R.id.itemProduct_calories);
+            price_pr = mView.findViewById(R.id.itemProduct_price) ;
+            description_pr = mView.findViewById(R.id.itemProduct_description);
+
+            Picasso.with(context).load(image).into(image_pr);
+            name_pr.setText(name);
+            calories_pr.setText(calories);
+            price_pr.setText(price);
+            description_pr.setText(description);
+        }
+    }
 
     public void setUri(List<Linkbanner> linkURi)
     {
@@ -172,7 +244,7 @@ public class Home_Fragment extends Fragment {
 
    public void setCategory()
     {
-         thread = new Thread(new Runnable() {
+         threadCategory= new Thread(new Runnable() {
             @Override
             public void run() {
                 databaseReference = FirebaseDatabase.getInstance().getReference("Category");
@@ -188,7 +260,39 @@ public class Home_Fragment extends Fragment {
                         }
                         LinearLayoutManager linearLayoutManager =  new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
                         recyclerView_Category.setLayoutManager(linearLayoutManager);
-                        recyclerView_Category.setAdapter(new HomeCategory_Adapter(getContext(),categoryList));
+                        recyclerView_Category.setAdapter(new HomeCategory_Adapter(getContext(), categoryList, new ChangeBoderItemCategory() {
+                            @Override
+                            public void sendData(Boolean check, String idCategory, int postion ) {
+
+                                    if (selected_postition !=-2) {
+                                        RecyclerView.ViewHolder rv_view = recyclerView_Category.findViewHolderForAdapterPosition(selected_postition);
+                                        RelativeLayout rl = rv_view.itemView.findViewById(R.id.itemCategory_border);
+                                        ImageView image = rv_view.itemView.findViewById(R.id.itemCategory_imagefood);
+                                        image.requestLayout();
+                                        image.getLayoutParams().height = (int) getActivity().getApplicationContext().getResources().getDimension(R.dimen.item_default_height);
+                                        image.getLayoutParams().width = (int) getActivity().getApplicationContext().getResources().getDimension(R.dimen.item_default_width);
+                                        rl.setBackgroundResource(R.drawable.unselected_itemcategory);
+                                        if (selected_postition == postion) {
+                                            //
+                                            FilterProduct("");
+                                            selected_postition = -2;
+
+                                        } else {
+                                           FilterProduct(idCategory);
+                                            selected_postition =postion;
+                                        }
+
+                                    }
+                                    else {
+                                        FilterProduct(idCategory);
+                                        selected_postition = postion;
+                                    }
+
+
+
+
+                            }
+                        }));
 
 
                     }
@@ -200,7 +304,7 @@ public class Home_Fragment extends Fragment {
                 });
             }
         });
-        thread.start();
+        threadCategory.start();
     }
     public void setProduct()
     {
@@ -232,7 +336,7 @@ public class Home_Fragment extends Fragment {
 
     }
    public void setRestaurant() {
-        thread2 = new
+        threadrestaurant = new
                 Thread(new Runnable() {
             @Override
             public void run() {
@@ -260,7 +364,7 @@ public class Home_Fragment extends Fragment {
                 });
             }
         });
-        thread2.start();
+        threadrestaurant.start();
 
 
 
@@ -359,8 +463,8 @@ public class Home_Fragment extends Fragment {
 
     @Override
     public void onDestroyView() {
-        thread.interrupt();
-        thread2.interrupt();
+        threadCategory.interrupt();
+        threadrestaurant.interrupt();
         Log.d("Home","OnDestroy");
         super.onDestroyView();
     }

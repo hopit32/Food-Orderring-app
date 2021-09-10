@@ -185,7 +185,7 @@
                 android:layout_below="@+id/home_recyclerView_category"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:text="Popular"
+                android:text="Product"
                 android:textColor="#111"
                 android:textSize="15dp"
                 android:textStyle="bold"

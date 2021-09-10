@@ -19,7 +19,7 @@
 
     <ImageView
         android:transitionName="imageFoodtransition"
-        android:id="@+id/itemFroduct_image"
+        android:id="@+id/itemProduct_image"
         android:layout_width="120dp"
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
 
     <TextView
         android:transitionName="nameFoodtransiton"
-        android:id="@+id/itemFroduct_name"
+        android:id="@+id/itemProduct_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Noodles egg"
@@ -44,10 +44,10 @@
 
     <TextView
         android:transitionName="desciptionFoodtransition"
-        android:id="@+id/itemFroduct_description"
+        android:id="@+id/itemProduct_description"
         android:textColor="#B6B6B6"
         android:layout_width="90dp"
-        android:layout_height="20dp"
+        android:layout_height="16dp"
         android:text="Spicy food pasta"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,6 +69,7 @@
         app:layout_constraintVertical_bias="0.67" />
 
     <TextView
+        android:id="@+id/itemProduct_calories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="90"
@@ -108,7 +109,7 @@
         app:layout_constraintVertical_bias="0.78" />
 
     <TextView
-        android:id="@+id/itemFroduct_price"
+        android:id="@+id/itemProduct_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="9.40"

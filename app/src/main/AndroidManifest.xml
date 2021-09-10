@@ -21,6 +21,9 @@
         android:theme="@style/Theme.Project_OderApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ACTIVITY.MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".ACTIVITY.SearchFoodActivity"
             android:exported="true" />
         <activity
@@ -46,9 +49,6 @@
             android:exported="true" />
         <activity
             android:name=".ACTIVITY.LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".ACTIVITY.OrderDetailActivity"

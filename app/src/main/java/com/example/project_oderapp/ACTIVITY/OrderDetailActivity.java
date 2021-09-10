@@ -70,7 +70,7 @@ public class OrderDetailActivity extends AppCompatActivity {
         txt_paymentmethod.setText(bill.getPayment_method());
         txt_code.setText(bill.getCode());
         txt_username.setText(bill.getName());
-        txt_addressshipping.setText(bill.getAddress_Shipping());
+        txt_addressshipping.setText(bill.getAddress());
 
         //
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false);

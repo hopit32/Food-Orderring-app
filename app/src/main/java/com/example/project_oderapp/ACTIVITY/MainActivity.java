@@ -1,4 +1,4 @@
-package com.example.project_oderapp;
+package com.example.project_oderapp.ACTIVITY;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,12 +20,13 @@ import com.example.project_oderapp.FRAGMENT.Favorite_Faragment;
 import com.example.project_oderapp.FRAGMENT.Home_Fragment;
 import com.example.project_oderapp.FRAGMENT.List_Fragment;
 import com.example.project_oderapp.FRAGMENT.Personal_Fragment;
+import com.example.project_oderapp.R;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class    MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     ImageView icon_home, icon_favorite, icon_list, icon_me;
     ImageView icon_home_2, icon_favorite_2, icon_list_2, icon_me_2;
     FrameLayout container;
@@ -102,6 +103,5 @@ public class    MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
     }
-
 
 }

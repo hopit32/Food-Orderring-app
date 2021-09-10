@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Bill  implements Serializable {
 
-    private String address_Shipping;
+    private String address;
 
 
     private String name;
@@ -33,7 +33,7 @@ public class Bill  implements Serializable {
 
     private String subtotal;
 
-    public Bill(String address_Shipping,String name,String code,String iduser, String payment_method, String total, String date, String note, String price_deliver, ArrayList<Product> products, String subtotal) {
+    public Bill(String address,String name,String code,String iduser, String payment_method, String total, String date, String note, String price_deliver, ArrayList<Product> products, String subtotal) {
         this.iduser = iduser;
         this.payment_method = payment_method;
         this.total = total;
@@ -43,19 +43,18 @@ public class Bill  implements Serializable {
         this.products = products;
         this.code = code;
         this.name = name;
-        this.address_Shipping = address_Shipping;
+        this.address = address;
         this.subtotal =subtotal;
     }
     public Bill()
     {}
 
-
-    public String getAddress_Shipping() {
-        return address_Shipping;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddress_Shipping(String address_Shipping) {
-        this.address_Shipping = address_Shipping;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getSubtotal() {

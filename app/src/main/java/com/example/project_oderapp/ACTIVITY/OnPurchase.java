@@ -4,17 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.project_oderapp.MODEL.Bill;
-import com.example.project_oderapp.MainActivity;
 import com.example.project_oderapp.R;
 import com.google.android.material.appbar.AppBarLayout;
-
-import org.w3c.dom.Text;
 
 public class OnPurchase extends AppCompatActivity implements View.OnClickListener{
     TextView txt_username, txt_subtotal, txt_deliverprice, txt_total, txt_orderDetail,txt_continueShopping;
